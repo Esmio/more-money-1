@@ -7,13 +7,13 @@ zh-CN:
             password:
               blank: 密码不能为空
               too_short: 密码不能少于 6 个字符
+              confirmation: 确认密码不一致
             email:
               taken: 邮箱已经被注册了
               blank: 邮箱不能为空
               invalid: 邮箱不合法
             password_confirmation:
               blank: 确认密码不能为空
-              confirmation: 确认密码不一致
   activemodel:
     errors:
       models:
@@ -22,6 +22,8 @@ zh-CN:
             email:
               blank: 请填写邮箱
               invalid: 邮箱格式错误
+              not_found: 邮箱没有注册
             password:
               blank: 请填写密码
               too_short: 密码不能少于 6 个字符
+              mismatch: 账号或密码错误
