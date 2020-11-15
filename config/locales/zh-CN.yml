@@ -24,4 +24,4 @@ zh-CN:
               invalid: 邮箱格式错误
             password:
               blank: 请填写密码
-              to_short: 密码不能少于 6 个字符
+              too_short: 密码不能少于 6 个字符
