@@ -36,7 +36,7 @@ bin/rails db:migrate
 bin/rails s
 ```
 
-##自动生成文档
+## 自动生成文档
 ```bash
 bin/rake docs:generate
 open doc/api/index.html
