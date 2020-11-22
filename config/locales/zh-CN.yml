@@ -2,6 +2,12 @@ zh-CN:
   activerecord:
     errors:
       models:
+        record:
+          attributes:
+            amount:
+              blank: 数额不能为空
+            category:
+              blank: 类型不能为空
         user:
           attributes:
             password:
