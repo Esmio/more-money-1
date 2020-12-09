@@ -109,8 +109,8 @@ table th, table td {
       <h1>Records API</h1>
 
       <div class="article">
-        <h2>创建记账</h2>
-        <h3>POST /records</h3>
+        <h2>更新一个记录</h2>
+        <h3>PATCH /records/:id</h3>
 
           <h3>Parameters</h3>
           <table class="parameters table table-striped table-bordered table-condensed">
@@ -122,7 +122,7 @@ table th, table td {
             </thead>
             <tbody>
               <tr>
-                <td class="required">
+                <td>
                     <span class="name">amount</span>
                 </td>
                 <td>
@@ -130,7 +130,7 @@ table th, table td {
                 </td>
               </tr>
               <tr>
-                <td class="required">
+                <td>
                     <span class="name">category</span>
                 </td>
                 <td>
@@ -153,31 +153,31 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Content-Type: application/json
-Cookie: _money_session_id=bRw9B0XqlqUeB4hLojajYiNS%2FKZSPpfd%2BPzgpYfkL4d314flSePQrm%2BIliRl08CSeKw1uujfOArf%2F9tSsTpyeCbMS5qwkNe6Og0T0pe13nLSgwLr1avSJfIjZT3Lb7D3ADn3BSr3vImG%2FLBKQf59BOyOS0xyA0z4ia8XsdGvXtKJvs7JN7DAb3hbzg8bxZBlnHK0vxWWwHps6OC%2FrsxmxR44hyGJW5O70Dnll0E0hyKRlZMX4%2FqVYLo%3D--rUXC4tHoK4FAHy%2FL--qPOZCEK7DB5GnTE1UQCGcg%3D%3D</pre>
+Cookie: _money_session_id=RZ0xLbTOX60gQh3gWxv28BY9IknNy2vPSXdBT48%2BP7b9LgOJ3Svi12bO6sjQIzafTTPhIowl5fdg4RQzf%2FVbNeReivUHPhThbGYd4OfFK37smvZcEv1zHJMdmQVeyGhzvUW9OeciiRV2uQMqSbzFClZgcCukxRKfCe2l706c%2B2yDvD01gcNlMaKaEDRpXxbHJlUMhGxwhRzJXTtSXY5Zpt%2FSpQEbsWS03293h0G7BrXYXupUx2KIKaQ%3D--iWe%2FFe6%2BJoCJWKBl--%2BirqKXVJqb5zuxvQzhRWRA%3D%3D</pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">POST /records</pre>
+          <pre class="request route highlight">PATCH /records/322</pre>
 
 
             <h4>Body</h4>
-            <pre class="request body">{"amount":10000,"category":"income","notes":"彩票中奖"}</pre>
+            <pre class="request body">{"amount":9900,"category":"income","notes":"中奖"}</pre>
 
 
             <h3>Response</h3>
               <h4>Headers</h4>
               <pre class="response headers">Content-Type: application/json; charset=utf-8
-Set-Cookie: _money_session_id=1XlzmWjSnylJMpFJ29gpCCxPCzkQ6NW%2BBOk5%2BIbRr2CRJ9NOoUqQsghDCdCf%2FfNSnGbfF%2FFuR5uHDOi%2BKELgJ7t15p4LMriNEcTiz873jzAuC4QyTfc8b%2BskLF7V%2BMz0JzE22LUTivzano1lYbAP17EUCgrTHkSA2NhZxbP5Q5XCYEXOAjUG7X0gH7VwMELPg9CuJ%2F%2F3ZE%2F5XvFvO3IAj6WbnpEG2fvyHRwBFiKQd%2BNaGnPc8Rmatq8%3D--2YVz7lxAvkgW9Yb6--RzmH6O3TPp7lVoKgyks%2F9w%3D%3D; path=/; HttpOnly</pre>
+Set-Cookie: _money_session_id=b6ah76eIGeSMoDXHyce7p27HmlAwt4NUFBFw71WQAkA8%2FwrqG3P6NJk6DxQ3DcJ6D%2FJ%2Bhv9S70jPw9Y62ZUVgv3u%2FFKx5oBAflwpgVmvedZr9hFAMq6MNelXERNZEBDCyzPnUTj2wwtrLtDDniw6bhWEtbCzigMJUaC56rHoylU%2B%2B5kNdvmOIHRPyMCi34cm4jjJ8hQSfTn7y%2B%2FmlDVJ9%2BGChBa1WMTenWH8%2FPQVNORzOmUPcO1lCQw%3D--n5d1oBI23%2FswcGjr--TdmxPkwRopZtD3e9Tj8V0A%3D%3D; path=/; HttpOnly</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;resource&quot;: {
-    &quot;id&quot;: 319,
-    &quot;amount&quot;: 10000,
+    &quot;id&quot;: 322,
+    &quot;amount&quot;: 9900,
     &quot;category&quot;: &quot;income&quot;,
-    &quot;notes&quot;: &quot;彩票中奖&quot;,
-    &quot;created_at&quot;: &quot;2020-12-09T17:16:17.866Z&quot;,
-    &quot;updated_at&quot;: &quot;2020-12-09T17:16:17.866Z&quot;
+    &quot;notes&quot;: &quot;中奖&quot;,
+    &quot;created_at&quot;: &quot;2020-12-09T17:16:18.229Z&quot;,
+    &quot;updated_at&quot;: &quot;2020-12-09T17:16:18.265Z&quot;
   }
 }</pre>
       </div>
