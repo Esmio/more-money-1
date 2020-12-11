@@ -20,6 +20,10 @@ zh-CN:
               invalid: 邮箱不合法
             password_confirmation:
               blank: 确认密码不能为空
+        tag:
+          attributes:
+            name:
+              blank: 标签名不能为空
   activemodel:
     errors:
       models:
