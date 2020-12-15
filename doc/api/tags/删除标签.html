@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Records API</title>
+    <title>Tags API</title>
     <meta charset="utf-8">
     <style>
       
@@ -106,11 +106,11 @@ table th, table td {
   </head>
   <body>
     <div class="container">
-      <h1>Records API</h1>
+      <h1>Tags API</h1>
 
       <div class="article">
-        <h2>获取一个记录</h2>
-        <h3>GET /records/:id</h3>
+        <h2>删除标签</h2>
+        <h3>DELETE /tags/:id</h3>
 
 
 
@@ -118,31 +118,20 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Content-Type: application/json
-Cookie: _money_session_id=4yrjSFKisAgJANQxfn6xbgoaMy%2FEY63VAMNwhrqDHcz7Q6WIX59tYY%2FTMtueApAOyB2Pf1S8GviMn89QFW4FgUXWdLWyXbx8b7bB2483MN18R47lemnquyP2QXmCyA8HYymNsPTMukVRpMdXzVtsFOkH9Bmbi741H9YNfGJZq9K9WJE490Hg6oxEEUTwepjF%2F4zMfdpOFQ29QvmBCvnzslqCr7lzawekhUHBa321err3ZWfkNF3H1eU%3D--lZ1KTzl79UkNwcEc--8aabArYozo8ULSxYCZ6K2Q%3D%3D</pre>
+Cookie: _money_session_id=IB%2Fb%2FVHaFeM4J0hp18G1wJkKqwRIcTij27SRuT60o1qPVReDmOE7gin4i79KJMst6HYUlKboTLqXs%2BW8wriV7smTnmJeL4%2BwabI3N2knBPbBpbFhjcI04IzG0joEsdeujP7ROcVYhKR%2FZeZ8OcW%2Bzlkws0YjOjQsx21sywmAEmaW3sYduMUPE9JGJIWQY3kCBQnKbAl7H2RCf04PLqWg5wMKu2nHg8gJeVVARX4diOYIfD94WpwGKVM%3D--jPloBZ%2Fam0qN2dWi--3Ur2VOgWthbiSTSXEp8Pwg%3D%3D</pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /records/239</pre>
+          <pre class="request route highlight">DELETE /tags/63</pre>
 
 
 
 
             <h3>Response</h3>
               <h4>Headers</h4>
-              <pre class="response headers">Content-Type: application/json; charset=utf-8
-Set-Cookie: _money_session_id=YCiqpI8cZiQUKPtQ4a8xyO799kIhw73D4NxBelUZnomTtSR8YRFhUgUiyaFU6H1v6WrETuoG%2Bp8EEeJSUgV4LOUlrgaDkVqx%2FYXsFmivr3h8whgTM29A625D12%2BxldHBnQUXgi%2BqUWjE5u1CDK9obGTaZdm2xE9ZPAaBBhNW7oICjSbRc0dho10L8bIDXPjU%2FAMyYa98qkcX3LS%2Famcac%2FbO8GJ4AzeTBqsIAJmLpGshagA%2FxWosE0w%3D--miWjRnCbCrqrocMj--4zxJ3uw9G%2FJ4sio77M3OvQ%3D%3D; path=/; HttpOnly</pre>
+              <pre class="response headers">Content-Type: application/json
+Set-Cookie: _money_session_id=%2B%2BSZux29gXeyhmeFLZK0ooVXjinAIZsnSpLfhzgZn1iiUvXtAId8hjLJB1Sg213Z0r%2FVqzCNg5elugn7HoBOrl1iHVhuEKYePb9IalcNCCcQds9OiqlHALw31Me%2B5XB4bOeb%2FD4aF9f2sfrgpjXLvCjMpevG5Shezg0QE41%2BQe92OROcCpf2XtSVqoNDw8RWct6ey3NAiB4FvJdw%2B2%2F9eZ%2BQNzswcvaaTCE5GKF5Mtvdcc4fdbzefWM%3D--%2FoQkxoDfA7v83yWO--ztFgatC4Yh6ph3AvicxgUQ%3D%3D; path=/; HttpOnly</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
-              <h4>Body</h4>
-              <pre class="response body">{
-  &quot;resource&quot;: {
-    &quot;id&quot;: 239,
-    &quot;amount&quot;: 10000,
-    &quot;category&quot;: &quot;income&quot;,
-    &quot;notes&quot;: null,
-    &quot;created_at&quot;: &quot;2020-12-15T17:11:09.071Z&quot;,
-    &quot;updated_at&quot;: &quot;2020-12-15T17:11:09.071Z&quot;
-  }
-}</pre>
       </div>
     </div>
   </body>
