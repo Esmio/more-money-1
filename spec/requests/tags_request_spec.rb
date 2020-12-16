@@ -54,7 +54,7 @@ RSpec.describe "Tags", type: :request do
   end
 
   context 'show' do
-    it 'should not get a tag tag sign in' do
+    it 'should not get a tag before sign in' do
       tag = Tag.create! name: 'test'
       get "/tags/#{tag.id}"
       expect(response.status).to eq 401
@@ -65,7 +65,7 @@ RSpec.describe "Tags", type: :request do
       get "/tags/#{tag.id}"
       expect(response.status).to eq 200
     end
-    it 'should get a tag because of not found' do
+    it 'should not get a tag because of not found' do
       sign_in
       Tag.create! name: 'test'
       get "/tags/99999999"
