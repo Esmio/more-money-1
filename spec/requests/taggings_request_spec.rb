@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe "Taggings", type: :request do
   before :each do
-    @record = Record.create! amount: 10000, category: 'income'
+    @user = create(:user, email: 'test111@qq.com')
+    @record = Record.create! amount: 10000, category: 'income', user: @user
     @tag = Tag.create! name: 'test'
     @tagging = Tagging.create! tag: @tag, record: @record
     (1..11).to_a.map do |n|

@@ -2,7 +2,8 @@ require 'rails_helper'
 require 'rspec_api_documentation/dsl'
 
 resource "Records" do
-  let(:record) { Record.create! amount: 10000, category: 'income' }
+  let(:user) { create(:user, email: 'test111@qq.com') }
+  let(:record) { Record.create! amount: 10000, category: 'income', user: user }
   let(:id) { record.id }
   let(:amount) { 10000 }
   let(:category) { 'income' }
@@ -14,6 +15,7 @@ resource "Records" do
     example "创建记账" do
       sign_in
       do_request(amount: 10000, category: 'income', notes: '彩票中奖')
+      p response_body
       expect(status).to eq 200
     end
   end
@@ -31,10 +33,10 @@ resource "Records" do
 
     let(:page) { 1 }
 
-    (1..11).to_a.map do
-      Record.create! amount: 10000, category: 'income'
-    end
     example '获取所有记录' do
+      (1..11).to_a.map do
+        Record.create! amount: 10000, category: 'income', user: user
+      end
       sign_in
       do_request
       expect(status).to eq 200
