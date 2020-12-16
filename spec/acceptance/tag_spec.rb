@@ -5,6 +5,7 @@ resource "Tags" do
   let(:tag) { Tag.create! name: 'test' }
   let(:id) { tag.id }
   let(:name) {'test'}
+
   post "/tags" do
     parameter :name, '标签名', type: :string, required: true
     example "创建标签" do
