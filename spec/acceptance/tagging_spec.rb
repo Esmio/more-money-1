@@ -3,15 +3,15 @@ require 'rspec_api_documentation/dsl'
 
 resource "Taggings" do
   let(:user) { create(:user, email: 'test111@qq.com') }
-  let(:tag) { Tag.create! name: 'test' }
+  let(:tag) { create :tag, name: 'test' }
   let(:tag_id) { tag.id }
-  let(:record) { Record.create! amount: 10000, category: 'income', user: user }
+  let(:record) { create :record, user: user }
   let(:record_id) { record.id }
-  let(:tagging) { Tagging.create! tag: tag, record: record }
+  let(:tagging) { create :tagging, tag: tag, record: record }
   let(:id) { tagging.id }
   let(:taggings) {
     (1..11).to_a.map do |n|
-      Tagging.create! record: record, tag: Tag.create!(name: "test#{n}")
+      create :tagging, record: record, tag: (create :tag, name: "test#{n}")
     end
   }
   let(:create_taggins) {

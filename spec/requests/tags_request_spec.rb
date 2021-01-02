@@ -24,13 +24,13 @@ RSpec.describe "Tags", type: :request do
 
   context 'destroy' do
     it 'should not destroy a tag before sign in' do
-      tag = Tag.create! name: 'test'
+      tag = create :tag
       delete "/tags/#{tag.id}"
       expect(response.status).to eq 401
     end
     it 'should destroy a tag' do
       sign_in
-      tag = Tag.create! name: 'test'
+      tag = create :tag
       delete "/tags/#{tag.id}"
       expect(response.status).to eq 200
     end
@@ -43,7 +43,7 @@ RSpec.describe "Tags", type: :request do
     end
     it 'should get tags' do
       (1..11).to_a.map do |n|
-        Tag.create! name: "test#{n}"
+        create :tag, name: "test#{n}"
       end
       sign_in
       get '/tags'
@@ -55,19 +55,19 @@ RSpec.describe "Tags", type: :request do
 
   context 'show' do
     it 'should not get a tag before sign in' do
-      tag = Tag.create! name: 'test'
+      tag = create :tag
       get "/tags/#{tag.id}"
       expect(response.status).to eq 401
     end
     it 'should get a tag' do
       sign_in
-      tag = Tag.create! name: 'test'
+      tag = create :tag
       get "/tags/#{tag.id}"
       expect(response.status).to eq 200
     end
     it 'should not get a tag because of not found' do
       sign_in
-      Tag.create! name: 'test'
+      create :tag
       get "/tags/99999999"
       expect(response.status).to eq 404
     end
@@ -75,13 +75,13 @@ RSpec.describe "Tags", type: :request do
 
   context 'update' do
     it 'should not update a tag before sign in' do
-      tag = Tag.create! name: 'xxx'
+      tag = create :tag
       patch "/tags/#{tag.id}", params: {name: 'test'}
       expect(response.status).to eq 401
     end
     it 'should update a tag' do
       sign_in
-      tag = Tag.create! name: 'xxx'
+      tag = create :tag
       patch "/tags/#{tag.id}", params: {name: 'test'}
       expect(response.status).to eq 200
       body = JSON.parse response.body

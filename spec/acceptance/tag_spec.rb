@@ -2,9 +2,9 @@ require 'rails_helper'
 require 'rspec_api_documentation/dsl'
 
 resource "Tags" do
-  let(:tag) { Tag.create! name: 'test' }
-  let(:id) { tag.id }
   let(:name) {'test'}
+  let(:tag) { create :tag, name: name }
+  let(:id) { tag.id }
 
   post "/tags" do
     parameter :name, '标签名', type: :string, required: true
@@ -28,10 +28,10 @@ resource "Tags" do
 
     let(:page) { 1 }
 
-    (1..11).to_a.map do |n|
-      Tag.create! name: "test#{n}"
-    end
     example '获取所有标签' do
+      (1..11).to_a.map do |n|
+        create :tag, name: "test#{n}"
+      end
       sign_in
       do_request
       expect(status).to eq 200
